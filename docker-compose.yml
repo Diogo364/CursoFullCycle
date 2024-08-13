@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    image: diogo364/go:latest
+    image: diogo364/fullcycle:latest
   # go-dev:
   #   build:
   #     context: .
