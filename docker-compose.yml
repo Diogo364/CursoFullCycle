@@ -1,0 +1,21 @@
+services:
+  go-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: diogo364/go:latest
+  # go-dev:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - USERNAME=${USERNAME}
+  #       - UID=${UID}
+  #       - GID=${GID}
+  #   image: diogo364/go:latest
+  #   volumes:
+  #     - type: bind
+  #       source: .
+  #       target: /usr/src/app/
+  #   command: tail -F anything
+
