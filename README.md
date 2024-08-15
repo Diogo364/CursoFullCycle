@@ -1,3 +1,4 @@
+## Enunciado
 Esse desafio é muito empolgante principalmente se você nunca trabalhou com a linguagem Go! Você terá que publicar uma imagem no docker hub. Quando executarmos:
 
 docker run /fullcycle
@@ -16,3 +17,10 @@ Suba o projeto em um repositório Git remoto e coloque o link da imagem que subi
 Compartilhe o link do repositório do Git remoto para corrigirmos seu projeto.
 
 Divirta-se!
+
+## Resolução:
+- A imagem GO criada pode ser acessada pelo link, ou baixada pelo comando abaixo: https://hub.docker.com/r/diogo364/go
+
+```bash 
+docker pull diogo364/go
+```
