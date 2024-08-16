@@ -1,0 +1,16 @@
+services:
+  node-dev:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=${DOCKER_UNAME}
+        - USER_UID=${DOCKER_USER_UID}
+        - USER_GID=${DOCKER_USER_GID}
+    environment:
+      - HOME=/home/${DOCKER_UNAME}
+    network_mode: host
+    volumes:
+      - ./node:${DOCKER_WORKDIR}
+      - ${HOME}/.config/nvim:/home/${DOCKER_UNAME}/.config/nvim:cached
+    command: nvim --listen 0.0.0.0:8008 --headless
