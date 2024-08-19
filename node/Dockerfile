@@ -19,6 +19,10 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 
 RUN mkdir /app && chmod -R +rw /app
 
+COPY package.json .
+
+RUN npm install package.json
+
 USER ${USERNAME}
 
 ENV SHELL=/bin/bash
@@ -26,3 +30,4 @@ ENV SHELL=/bin/bash
 EXPOSE 8888
 
 WORKDIR /app
+

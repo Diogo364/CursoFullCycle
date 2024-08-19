@@ -15,10 +15,17 @@ services:
   node:
     build:
       context: ./node
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=${DOCKER_UNAME}
+        - USER_UID=${DOCKER_USER_UID}
+        - USER_GID=${DOCKER_USER_GID}
     container_name: node
+    user: "${DOCKER_USER_GID}:${DOCKER_USER_UID}"
     networks:
       - node-network
+    volumes:
+      - ./node:/app
     depends_on: 
       - mysql
     entrypoint: dockerize -wait tcp://mysql:3306 -timeout 20s docker-entrypoint.sh
